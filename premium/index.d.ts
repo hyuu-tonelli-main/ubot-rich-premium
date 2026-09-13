@@ -1,0 +1,64 @@
+export function installPremiumEmoji(pilihan?: {}): {
+    status: typeof State.status;
+    emoji: {
+        emo: (emoji: any) => any;
+        emoCustom: (id: any, fallback: any) => any;
+        emoAlias: (name: any) => string;
+        emoSocial: (name: any) => string;
+        carStrip: () => string;
+        faceBlock: () => string;
+        resolveAliases: (text: any) => any;
+        aliasToFallback: (text: any) => any;
+        aliasInfo: (name: any) => any;
+        aliasList: () => {
+            name: string;
+            group: string;
+            emoji: string;
+            id: string;
+            fallback: string;
+        }[];
+        aliasListByGroup: () => Map<any, any>;
+        emojiById: (id: any) => any;
+        upgrade: (html: any) => any;
+        nodes: (teks: any) => any;
+        blokPremium: (blok: any) => any;
+        strip: (html: any) => any;
+        plain: (html: any) => any;
+        unwrapPlain: (html: any) => any;
+        capCustom: (html: any, max?: number) => any;
+        ensure: (html: any, marker?: string) => any;
+        render: (html: any, premium?: boolean) => any;
+        countCustom: (html: any) => number;
+        hasCustom: (html: any) => boolean;
+        MAX_CUSTOM_EMOJI: number;
+    };
+    options: {
+        client: null;
+        bot: null;
+        botUsername: null;
+        ownerId: null;
+        userId: null;
+        mediaChatId: null;
+        inline: boolean;
+        media: boolean;
+        cheatPremiumEmojis: boolean;
+        teksMuat: string;
+        tombolMuat: string;
+        mode: string;
+        botMode: string;
+        debug: boolean;
+        banner: boolean;
+        logger: {
+            info: (pesan: any) => void;
+            warn: (pesan: any) => void;
+            error: (pesan: any) => void;
+        };
+    };
+};
+import RichBlok = require("./rich");
+import Emoji = require("./premium-emoji");
+import State = require("./premium-state");
+import Inline = require("./inline-send");
+import Banner = require("./banner");
+import { opsi } from "./options";
+export { RichBlok as rich, Emoji as emoji, State as premiumState, Inline as inlineSend, Banner as banner, opsi as options };
